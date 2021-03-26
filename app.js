@@ -13,7 +13,9 @@ function app(people){
       break;
     case 'no':
       // TODO: search by traits
+
       //what color eyes? etc
+
       break;
       default:
     app(people); // restart app
@@ -39,7 +41,9 @@ function mainMenu(person, people){
   switch(displayOption){
     case "info":
     // TODO: get person's info
+
     //display all available info
+
     break;
     case "family":
     // TODO: get person's family
@@ -67,6 +71,9 @@ function searchByName(people){
     if(person.firstName === firstName && person.lastName === lastName){
       return true;
     }
+    else if (person.firstName === firstName || person.lastName === lastName){
+      return true;
+    }
     else{
       return false;
     }
@@ -90,6 +97,7 @@ function displayPerson(person){
   personInfo += "Last Name: " + person.lastName + "\n";
   // TODO: finish getting the rest of the information to display
   //populate a field with all necessary tidbits
+  return person(list);
 
 
   alert(personInfo);
