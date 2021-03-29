@@ -13,8 +13,17 @@ function app(people){
       break;
     case 'no':
       // TODO: search by traits
-      searchResults = searchWeight(people);
+      searchTraits = ;
+      {
+        searchWeight();
+        searchHeight();
+        searchOccupation();
+        searchEyeColor();
+        searchDob();
+      };
+
       //what color eyes? etc
+      //switch case for searchbyTrait instead of single function
 
       break;
       default:
@@ -87,7 +96,7 @@ function searchByName(people)
   })
   // TODO: find the person using the name they entered
   //return name with person's id, only display name, have option to view info (maybe make a button?)
-  return foundPerson[0];
+  return foundPerson;
 }
 
 
@@ -99,7 +108,7 @@ function searchWeight(people)
   weight = prompt("How much does this person weigh?");
   let foundPerson = people.filter(function(person)
   {
-    if (person.weight === weight)
+    if (person.weight == weight)
     {
       return true;
     }
@@ -109,7 +118,7 @@ function searchWeight(people)
       return false;
     }
   })
-   return foundPerson[0];
+   return foundPerson;
   
 }
 function searchHeight(people)
@@ -130,18 +139,18 @@ function searchHeight(people)
       return false;
     }
   })
-   return foundPerson[0];
+   return foundPerson;
   
 }
-function searchAge(people)
+function searchDob(people)
 {
   
-  var age;
+  var dob;
   
-  age = prompt("How old is the person you're looking for?");
+  dob = prompt("What is this person's date of birth? (mm/dd/yyyy, if single digit, just put single digit. i.e. January first = 1/1/yyyy");
   let foundPerson = people.filter(function(person)
   {
-    if (person.age === age)
+    if (person.dob == dob)
     {
       return true;
     }
@@ -151,7 +160,7 @@ function searchAge(people)
       return false;
     }
   })
-   return foundPerson[0];
+   return foundPerson;
   
 }
 function searchOccupation(people)
@@ -172,7 +181,7 @@ function searchOccupation(people)
       return false;
     }
   })
-   return foundPerson[0];
+   return foundPerson;
   
 }
 function searchEyeColor(people)
@@ -193,7 +202,7 @@ function searchEyeColor(people)
       return false;
     }
   })
-   return foundPerson[0];
+   return foundPerson;
   
 }
 // alerts a list of people
