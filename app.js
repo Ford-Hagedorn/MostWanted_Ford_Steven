@@ -14,7 +14,6 @@ function app(people){
     case 'no':
       // TODO: search by traits
       searchResults = searchWeight(people);
-      butterscotch;
       //what color eyes? etc
 
       break;
@@ -64,50 +63,55 @@ function mainMenu(person, people){
   }
 }
 
-function searchByName(people){
+function searchByName(people)
+{
   let firstName = promptFor("What is the person's first name?", chars);
   let lastName = promptFor("What is the person's last name?", chars);
-  
-  let foundPerson = people.filter(function(person){
-    if(person.firstName === firstName && person.lastName === lastName){
+
+  let foundPerson = people.filter(function(person)
+  {
+    if(person.firstName === firstName && person.lastName === lastName)
+    {
       return true;
     }
-    else if (person.firstName === firstName || person.lastName === lastName){
+    else if (person.firstName === firstName || person.lastName === lastName)
+    {
       return true;
     }
-    else{
+    else
+    {
       return false;
     }
   })
   // TODO: find the person using the name they entered
-  //return name using person's id, only display name, have option to view info (maybe make a button?)
+  //return name with person's id, only display name, have option to view info (maybe make a button?)
   return foundPerson[0];
 }
-function searchWeight(people){
-  
+
+
+function searchWeight(people)
+{
   var weight, filter, people, result;
-  weight = prompt("How much does this person weigh?")
-  
+  weight = prompt("How much does this person weigh?");
   people = document.getElementById("personTable");
   result = table.getElementsByTagName("result");
-
-  for (i = 0; i < result.length; i++){
+  for (i = 0; i < result.length; i++)
+  {
     weight = [i].getElementsByTagName("result")[i];
-    if (weight){
+    if (weight)
+    {
       txtValue = weight.textContent || weight.innerText;
-      if (txtValue.indexOf(filter) > -1){
+      if (txtValue.indexOf(filter) > -1)
+      {
         result[i].style.display = "";
       }
-      else {
+      else 
+      {
         result[i].style.display = "none";
       }
     }
   }
 }
-
-
-
-
 // alerts a list of people
 function displayPeople(people){
   alert(people.map(function(person){
