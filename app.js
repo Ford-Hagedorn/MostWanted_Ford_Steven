@@ -82,20 +82,21 @@ function searchByName(people){
   //return name using person's id, only display name, have option to view info (maybe make a button?)
   return foundPerson[0];
 }
-function searchFirstOrLastName(people){
+function searchWeight(people){
   
-  var firstName, lastName, filter, fullName, people, result;
-  firstName = document.getElementById("firstName");
-  lastName = document.getElementById("lastName");
-  filter = input.value.toUpperCase();
+  people[i].weight;
+
+  var weight, filter, people, result;
+  weight = prompt("How much does this person weigh?")
+  
   people = document.getElementById("personTable");
   result = table.getElementsByTagName("result");
 
   for (i = 0; i < result.length; i++){
-    fullName = result[i].getElementsByTagName("result")[0];
-    if (fullname){
-      txtValue = fullName.textContent || fullName.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1){
+    weight = [i].getElementsByTagName("result")[i];
+    if (weight){
+      txtValue = weight.textContent || weight.innerText;
+      if (txtValue.indexOf(filter) > -1){
         result[i].style.display = "";
       }
       else {
