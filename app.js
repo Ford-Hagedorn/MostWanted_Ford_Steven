@@ -66,7 +66,7 @@ function mainMenu(person, people){
 function searchByName(people){
   let firstName = promptFor("What is the person's first name?", chars);
   let lastName = promptFor("What is the person's last name?", chars);
-
+  
   let foundPerson = people.filter(function(person){
     if(person.firstName === firstName && person.lastName === lastName){
       return true;
@@ -79,9 +79,33 @@ function searchByName(people){
     }
   })
   // TODO: find the person using the name they entered
-  //return name with person's id, only display name, have option to view info (maybe make a button?)
-  return foundPerson;
+  //return name using person's id, only display name, have option to view info (maybe make a button?)
+  return foundPerson[0];
 }
+function searchFirstOrLastName(people){
+  
+  var firstName, lastName, filter, fullName, people, result;
+  firstName = document.getElementById("firstName");
+  lastName = document.getElementById("lastName");
+  filter = input.value.toUpperCase();
+  people = document.getElementById("personTable");
+  result = table.getElementsByTagName("result");
+
+  for (i = 0; i < result.length; i++){
+    fullName = result[i].getElementsByTagName("result")[0];
+    if (fullname){
+      txtValue = fullName.textContent || fullName.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1){
+        result[i].style.display = "";
+      }
+      else {
+        result[i].style.display = "none";
+      }
+    }
+  }
+
+
+
 
 // alerts a list of people
 function displayPeople(people){
