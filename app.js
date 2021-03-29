@@ -22,6 +22,7 @@ function app(people){
       break;
   }
   
+  
   // Call the mainMenu function ONLY after you find the SINGLE person you are looking for
   mainMenu(searchResults, people);
 }
@@ -82,6 +83,7 @@ function searchByName(people)
     {
       return false;
     }
+    
   })
   // TODO: find the person using the name they entered
   //return name with person's id, only display name, have option to view info (maybe make a button?)
@@ -91,12 +93,16 @@ function searchByName(people)
 
 function searchWeight(people)
 {
-  var weight, filter, people, result;
+  
+  var weight, filter, result;
+  
   weight = prompt("How much does this person weigh?");
-  people = document.getElementById("personTable");
-  result = table.getElementsByTagName("result");
+  
+  result = document.getElementById("people");
+  
   for (i = 0; i < result.length; i++)
   {
+    person[i] = result;
     weight = [i].getElementsByTagName("result")[i];
     if (weight)
     {
@@ -111,6 +117,7 @@ function searchWeight(people)
       }
     }
   }
+  
 }
 // alerts a list of people
 function displayPeople(people){
@@ -124,6 +131,12 @@ function displayPerson(person){
   // height, weight, age, name, occupation, eye color.
   let personInfo = "First Name: " + person.firstName + "\n";
   personInfo += "Last Name: " + person.lastName + "\n";
+  personInfo += "Weight: " + person.weight + "\n";
+  personInfo += "Age: " + person.age + "\n";
+  personInfo += "Height: " + person.height + "\n";
+  personInfo += "Occupation: " + person.occupation + "\n";
+  personInfo += "Eye color: " + person.eyeColor + "\n";
+
   // TODO: finish getting the rest of the information to display
   //populate a field with all necessary tidbits
   return person(list);
