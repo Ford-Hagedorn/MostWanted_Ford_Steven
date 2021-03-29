@@ -12,15 +12,36 @@ function app(people){
       searchResults = searchByName(people);
       break;
     case 'no':
+      promptFor("Do you know any traits about this person? Enter 'weight', 'height', 'dob', 'occupation', 'eye color', or 'no.").toLowerCase();
       // TODO: search by traits
-      searchTraits = ;
-      {
-        searchWeight();
-        searchHeight();
-        searchOccupation();
-        searchEyeColor();
-        searchDob();
-      };
+      searchResults = searchTraits(people);
+      switch(searchType){
+      case 'weight':
+        searchResults = searchWeight(people);
+        break;
+      case 'height' :
+        searchResults = searchHeight(people);
+        break;
+      case 'dob':
+        searchResults = searchDob(people);
+        break;
+      case 'occupation':
+        searchResults = searchOccupation(people);
+        break;
+      case 'eye color':
+        searchResults = searchEyeColor(people);
+        break;
+      case 'no':
+        prompt("Sorry. We can't just vaguely search based on a feeling.")
+        default:
+        app(people);
+        break;
+      }
+
+    
+
+  
+      
 
       //what color eyes? etc
       //switch case for searchbyTrait instead of single function
