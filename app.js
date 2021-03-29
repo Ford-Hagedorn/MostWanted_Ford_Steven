@@ -94,29 +94,106 @@ function searchByName(people)
 function searchWeight(people)
 {
   
-  var weight, filter, result;
+  var weight;
   
   weight = prompt("How much does this person weigh?");
-  
-  result = document.getElementById("people");
-  
-  for (i = 0; i < result.length; i++)
+  let foundPerson = people.filter(function(person)
   {
-    person[i] = result;
-    weight = [i].getElementsByTagName("result")[i];
-    if (weight)
+    if (person.weight === weight)
     {
-      txtValue = weight.textContent || weight.innerText;
-      if (txtValue.indexOf(filter) > -1)
-      {
-        result[i].style.display = "";
-      }
-      else 
-      {
-        result[i].style.display = "none";
-      }
+      return true;
     }
-  }
+    else 
+    {
+      console.log("Sorry. No matches on that weight.");
+      return false;
+    }
+  })
+   return foundPerson[0];
+  
+}
+function searchHeight(people)
+{
+  
+  var height;
+  
+  height = prompt("How much tall is this person?");
+  let foundPerson = people.filter(function(person)
+  {
+    if (person.height === height)
+    {
+      return true;
+    }
+    else 
+    {
+      console.log("Sorry. No matches on that height.");
+      return false;
+    }
+  })
+   return foundPerson[0];
+  
+}
+function searchAge(people)
+{
+  
+  var age;
+  
+  age = prompt("How old is the person you're looking for?");
+  let foundPerson = people.filter(function(person)
+  {
+    if (person.age === age)
+    {
+      return true;
+    }
+    else 
+    {
+      console.log("Sorry. No one at that age in here.");
+      return false;
+    }
+  })
+   return foundPerson[0];
+  
+}
+function searchOccupation(people)
+{
+  
+  var occupation;
+  
+  occupation = prompt("What does this person do for a living?");
+  let foundPerson = people.filter(function(person)
+  {
+    if (person.occupation === occupation)
+    {
+      return true;
+    }
+    else 
+    {
+      console.log("No matches with that occupation.");
+      return false;
+    }
+  })
+   return foundPerson[0];
+  
+}
+function searchEyeColor(people)
+{
+  
+  var eyeColor;
+  
+  eyeColor = prompt("What color eyes does this person have?");
+  let foundPerson = people.filter(function(person)
+  {
+    if (person.eyeColor === eyeColor)
+    {
+      return true;
+    }
+    else 
+    {
+      console.log("No one on this registry has that eye color.");
+      return false;
+    }
+  })
+   return foundPerson[0];
   
 }
 // alerts a list of people
