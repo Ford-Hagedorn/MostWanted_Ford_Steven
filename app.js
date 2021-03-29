@@ -14,6 +14,7 @@ function app(people){
     case 'no':
       // TODO: search by traits
       searchResults = searchWeight(people);
+      butterscotch;
       //what color eyes? etc
 
       break;
