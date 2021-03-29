@@ -13,7 +13,7 @@ function app(people){
       break;
     case 'no':
       // TODO: search by traits
-
+      searchResults = searchWeight(people);
       //what color eyes? etc
 
       break;
@@ -84,8 +84,6 @@ function searchByName(people){
 }
 function searchWeight(people){
   
-  people[i].weight;
-
   var weight, filter, people, result;
   weight = prompt("How much does this person weigh?")
   
@@ -104,6 +102,7 @@ function searchWeight(people){
       }
     }
   }
+}
 
 
 
