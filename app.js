@@ -38,6 +38,22 @@ function app(people){
         break;
       }
 
+      function searchByName(people){
+        let firstName = promptFor("Person's first name?", chars);
+        let lastName = promptFor("Person's last name?", chars);
+
+        let foundPerson = people.filter(function(person){
+          if(person.firstName === firstName && person.lastName === lastName){
+            return true;
+          }
+          else{
+            return false;
+          }
+        })
+        return foundPerson[0];
+      }
+
+
     
 
   
@@ -94,30 +110,17 @@ function mainMenu(person, people){
   }
 }
 
-function searchByName(people)
-{
-  let firstName = promptFor("What is the person's first name?", chars);
-  let lastName = promptFor("What is the person's last name?", chars);
 
-  let foundPerson = people.filter(function(person)
-  {
-    if(person.firstName === firstName && person.lastName === lastName)
-    {
+function findKids(personWithChildren, people){
+  let children = people.filter(function(person){
+    if(person.parents[0] == personWithChildren.id){
       return true;
     }
-    else if (person.firstName === firstName || person.lastName === lastName)
-    {
-      return true;
-    }
-    else
-    {
+    else{
       return false;
     }
-    
   })
-  // TODO: find the person using the name they entered
-  //return name with person's id, only display name, have option to view info (maybe make a button?)
-  return foundPerson;
+  for()
 }
 
 
