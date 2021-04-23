@@ -242,7 +242,7 @@ function displayPeople(people){
 function displayPerson(person){
   // print all of the information about a person:
   // height, weight, age, name, occupation, eye color.
-  let personInfo = "First Name: " + person.firstName + "\n";
+  personInfo = "First Name: " + person.firstName + "\n";
   personInfo += "Last Name: " + person.lastName + "\n";
   personInfo += "Weight: " + person.weight + "\n";
   personInfo += "Age: " + person.age + "\n";
@@ -256,6 +256,24 @@ function displayPerson(person){
 
 
   alert(personInfo);
+}
+
+function findParents(person, people){
+  let parents = people.filter(function(parent){
+    if(person.parents[0] == parent.id){
+      return true;
+    }
+    else if(person.parents[1] == parent.id){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+  let theParents = (parents.map(function(person){
+    return person.firstName + " " + person.lastName;
+  }).join("\n"));
+  return theParents;
 }
 
 // function that prompts and validates user input
