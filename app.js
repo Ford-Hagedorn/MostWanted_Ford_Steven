@@ -120,7 +120,10 @@ function findKids(personWithChildren, people){
       return false;
     }
   })
-  for()
+  for(let i = 0; i < children.count; i++){
+    let kid = children[i];
+  }
+  displayPeople(children);
 }
 
 
