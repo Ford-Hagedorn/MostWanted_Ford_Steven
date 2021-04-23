@@ -276,6 +276,24 @@ function findParents(person, people){
   return theParents;
 }
 
+function findSpouse(person, people){
+  let hubbywifey = people.filter(function(currentSpouse){
+    if(person.hubbywifey[0] == currentSpouse.id){
+      return true;
+    }
+    else if(person.hubbywifey[1] == currentSpouse.id){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+  let mySpouse = (hubbywifey.map(function(person){
+    return person.firstName + " " + person.lastName;
+  }).join("\n"));
+  return mySpouse;
+}
+
 // function that prompts and validates user input
 function promptFor(question, valid){
   do{
